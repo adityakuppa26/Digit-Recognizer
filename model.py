@@ -95,3 +95,20 @@ data_gen.fit(train_X)
 history = model.fit_generator(data_gen.flow(train_X, y=train_Y, batch_size=64), 
                               epochs=20, steps_per_epoch=train_X.shape[0]//64, 
                               validation_data=(val_X, val_Y), callbacks=[reduce_lr, checkpoint])
+
+
+# =============================================================================
+# Predicting on test
+# =============================================================================
+
+model.load_weights('Model.weights.best.hdf5')
+
+results=model.predict(test_file)
+
+results = np.argmax(results,axis = 1)
+
+results = pd.Series(results,name="Label")
+
+submission = pd.concat([pd.Series(range(1,28001),name = "ImageId"),results],axis = 1)
+
+submission.to_csv("cnn_mnist_datagen.csv",index=False)
