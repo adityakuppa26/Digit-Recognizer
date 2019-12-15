@@ -1,9 +1,9 @@
 # Digit-Recognizer
 
-https://www.kaggle.com/c/digit-recognizer
+https://www.kaggle.com/c/digit-recognizer  
 
--->  model.summary()
-Model: "sequential_1"
+-->  model.summary()  
+Model: "sequential_1"  
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
@@ -28,9 +28,10 @@ _________________________________________________________________
 dropout_1 (Dropout)          (None, 512)               0         
 _________________________________________________________________
 dense_3 (Dense)              (None, 10)                5130      
-=================================================================
-Total params: 3,769,354
-Trainable params: 3,769,354
-Non-trainable params: 0
 
-Accuracy achieved: 99.7%
+=================================================================  
+Total params: 3,769,354  
+Trainable params: 3,769,354  
+Non-trainable params: 0  
+  
+Accuracy achieved: 99.7%  
